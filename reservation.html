@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr, en, ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Réservation</title>
+    <meta name="description" content="Réserver dés maintenant un chauffeur privé pour vos balades ou voyage d'affaire, contater moi par ce formulaire ou par télephone au 0650272399.">
+  <meta name="keywords" content="vtc, chauffeur privé, Nice, cotes d'azure, aéroport Nice, Nice, PACA, reservation, vtc">
+  <meta name="language" content="fr, en">
+    <style>
+       
+            /* Styles pour les icônes */
+            .icon {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-right: 5px;
+                vertical-align: middle;
+            }
+            
+            /* Styles pour le numéro de téléphone */
+            .phone {
+                background-image: url('assets/img/phone.png');
+            }
+            
+            /* Styles pour l'adresse e-mail */
+            .email {
+                background-image: url('assets/img/email.png');
+            }
+            
+            /* Styles pour les liens */
+            a {
+                color: #653bda; /* Changez la couleur selon vos besoins */
+                text-decoration: none;
+            }
+        
+
+
+
+        body {
+            background-color: #bbabab; /* Fond gris */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px; /* Espace en haut de la page */
+        }
+
+        input[type=text], input[type=tel], input[type=email], select, textarea {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            background-color: #551cdb;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        div {
+            width: 50%;
+        }
+    </style>
+    <form id="contactForm" method="POST" action="traitement.php"></form>
+</head>
+<body>
+   
+    <h1>Réservation</h1>
+
+     <!-- Numéro de téléphone -->
+     <p>
+        <span class="icon phone"></span>
+        <a href="tel:+33650272399">06 50 27 23 99 </a>
+    </p>
+    
+    <!-- Adresse e-mail -->
+    <p>
+        <span class="icon email"></span>
+        <a href="mailto:gravier06210@gmx.fr">gravier06210@gmx.fr</a>
+    </p>
+    <form method="post" action="envoi.php">
+        <div>
+            <label for="nom">Nom  :</label>
+            <input type="text" id="nom" name="nom" required>
+        </div>
+        <div>
+            <label for="prenom">Prénom :</label>
+       
+            <input type="text" id="prenom" name="prenom" required>
+        </div>
+        <div>
+            <label for="telephone">Téléphone :
+               
+            </label> 
+            
+            <input type="tel" id="telephone" name="telephone" required>
+        </div>
+        <div>
+            <label for="email">E-mail :</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <div > <label for="date">Date de réservation :</label>
+                <input type="date" id="date" name="date" >
+              </div>
+        </div>
+
+    
+        <div>
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <div>
+            <label for="destination"> A partir de l'aéroport de Nice selectioné votre destination: 
+             
+                
+            </label>
+            <select id="destination" name="destination">
+                <option value="Cannes">Monaco</option>
+                <option value="Cannes">Cannes</option>
+                <option value="Saint Raphaël">Saint Raphaël</option>
+                <option value="Fréjus">Fréjus</option>
+                <option value="Antibes">Antibes</option>
+                <option value="Mandelieux">Mandelieu</option>
+                <option value="Grasse">Grasse</option>
+                <option value="Mougins">Mougins</option>
+                <option value="Autre destination">Autre destination</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Envoyer">
+            <button onclick="history.back()">Retour</button>
+
+        </div>
+    </form>
+    
+
+</body>
+</html>
